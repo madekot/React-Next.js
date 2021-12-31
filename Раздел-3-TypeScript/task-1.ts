@@ -14,20 +14,20 @@
 // 	]
 // }
 
-interface innerTest1 {
+interface Info {
   desc: string;
   isActive: boolean;
 }
 
-interface innerTest2 {
+interface Tag {
   name: string;
   value: number;
 }
 
-interface Test1 {
-  userId: number;
-  id: number;
+interface Reply {
+  userId: string;
+  id: string;
   title: string;
-  info: innerTest1;
-  tags: innerTest2;
+  info: Info;
+  tags: Tag[];
 }
