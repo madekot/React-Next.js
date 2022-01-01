@@ -31,3 +31,25 @@ function calcEnum() {
   // есть расчетные enum мы используем в них функцию, они могут быть только числовыми!
   return 2;
 }
+
+enum Dice {
+  One = 1,
+  Two,
+  Tree,
+}
+
+function ruDice(dice: Dice) {
+  switch (dice) {
+    case Dice.One:
+      return 'один';
+
+    case Dice.Two:
+      return 'два';
+
+    case Dice.Tree:
+      return 'три';
+
+    default:
+      const a: never = dice;
+  }
+}
