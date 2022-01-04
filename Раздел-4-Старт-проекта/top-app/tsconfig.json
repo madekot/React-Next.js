@@ -7,6 +7,7 @@
       "esnext"
     ],
     "allowJs": false,
+		"noImplicitAny": false,
     "skipLibCheck": true,
     "strict": true,
     "strictPropertyInitialization": false,
@@ -21,7 +22,8 @@
     "jsx": "preserve"
   },
   "include": [
-    "next-env.d.ts",
+    "next-env-custom.d.ts",
+    "images.d.ts",
     "**/*.ts",
     "**/*.tsx"
   ],
