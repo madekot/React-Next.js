@@ -7,14 +7,7 @@ export default function Home(): JSX.Element {
 
   useEffect(() => {
     console.log('Counter ' + counter);
-    return function cleanup() {
-      console.log('Unmount');
-    };
   }, []);
-
-  useEffect(() => {
-    console.log('Mounted')
-  });
   
   return (
     <>
