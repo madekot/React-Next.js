@@ -4,6 +4,7 @@ import { Paragraph } from "../components";
 
 export default function Home(): JSX.Element {
   const [counter, setCounter] = useState<number>(0);
+  const [rating, setRating] = useState<number>(4);
 
   useEffect(() => {
     console.log('Counter ' + counter);
@@ -24,7 +25,7 @@ export default function Home(): JSX.Element {
       <Tag color="grey"> тест</Tag>
       <Tag color="green"> тест</Tag>
       <Tag color="primary"> тест</Tag>
-      <Rating rating={3} />
+      <Rating rating={rating} isEditable={true} setRating={setRating}/>
     </>
   );
 }
