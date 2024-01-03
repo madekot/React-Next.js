@@ -1,0 +1,7 @@
+.rate {
+	display: flex;
+}
+
+.item:not(:last-child) {
+	padding-right: 5px;
+}

@@ -1,0 +1,25 @@
+.star {
+	position: relative;
+
+	box-sizing: content-box;
+
+	width: 20px;
+	height: 20px;
+
+	line-height: 0;
+}
+
+.filled svg {
+	fill: var(--primary);
+}
+
+.editable {
+	cursor: pointer;
+}
+
+.icon {
+	position: absolute;
+
+	width: 100%;
+	height: 100%;
+}

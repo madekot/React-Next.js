@@ -1,0 +1,22 @@
+.el {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.size-s {
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 24px;
+}
+
+.size-m {
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 24px;
+}
+
+.size-l {
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 29px;
+}

@@ -14,11 +14,13 @@
 			{
 				"allowSingleExtends": true
 			}
-		]
+		],
+		"no-unused-vars": "off",
+		"@typescript-eslint/no-unused-vars": ["error"]
 	},
 	"extends": [
 		"eslint:recommended",
 		"plugin:@typescript-eslint/eslint-recommended",
-		"plugin:@typescript-eslint/recommended"
+		"plugin:react-hooks/recommended"
 	]
 }
