@@ -1,9 +1,7 @@
 import { LayoutProps } from './Layout.props';
 import s from './Layout.module.css';
-import cn from 'classnames';
 import { Header } from '../Header';
 import React from 'react';
-// import { Sidebar } from '../Sidebar';
 import { Footer } from '../Footer';
 import { Sidebar } from "../Sidebar";
 

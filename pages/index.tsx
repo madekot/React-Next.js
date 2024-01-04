@@ -1,9 +1,9 @@
-import { Button, Rate, Tag, Typography } from "../components";
+import { Button, Rate, Tag, Typography } from "@/components";
 import { useState } from "react";
-import { withLayout } from "../layout";
+import { withLayout } from "@/layout";
 import { GetStaticProps } from "next";
 import axios from 'axios';
-import { MenuItem } from '../interfaces/menu.interface';
+import { MenuItem } from '@/interfaces';
 
 const { Paragraph, Title } = Typography;
 

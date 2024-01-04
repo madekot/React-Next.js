@@ -1,9 +1,4 @@
-export enum TopLevelCategory {
-    Courses,
-    Services,
-    Books,
-    Products
-}
+import { TopLevelCategory } from "./page.const";
 
 export interface TopPageAdvantage {
     _id: string;
@@ -11,7 +6,7 @@ export interface TopPageAdvantage {
     description: string;
 }
 
-export interface HhData {
+export interface JobOffers {
     _id: string;
     count: number;
     juniorSalary: number;
@@ -35,5 +30,5 @@ export interface TopPageModel {
     advantages: TopPageAdvantage[];
     createdAt: Date;
     updatedAt: Date;
-    hh: HhData;
+    hh: JobOffers;
 }

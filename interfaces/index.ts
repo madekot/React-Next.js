@@ -5,14 +5,14 @@ export type {
 } from './menu.interface';
 
 export type {
-    HhData,
+    JobOffers,
     TopPageAdvantage,
-    TopPageModel
-} from './page.interface';
+    TopPageModel,
+} from './page';
 
 export {
     TopLevelCategory
-} from './page.interface';
+} from './page';
 
 export type {
     ProductCharacteristic,
