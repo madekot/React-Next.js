@@ -1,7 +1,5 @@
-export { Typography } from './Typography';
-
 export { Button } from './Button';
-
-export { Tag } from './Tag';
-
+export { Icon } from './Icon';
 export { Rate } from './Rate';
+export { Tag } from './Tag';
+export { Typography } from './Typography';

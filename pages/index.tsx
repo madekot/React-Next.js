@@ -7,7 +7,7 @@ import { MenuItem } from '../interfaces/menu.interface';
 
 const { Paragraph, Title } = Typography;
 
-function Home({ menu }: HomeProps): JSX.Element {
+function Home(): JSX.Element {
     const [rating, setRating] = useState<number>(4);
     const [filled, setFilled] = useState<number>(rating);
 
