@@ -1,4 +1,4 @@
-import { useReducer } from "react";
+import { useEffect, useReducer } from "react";
 import { JobOffers, Tag, Typography, Advantages, Sort, SortEnum, Product } from '@/components';
 import { TopLevelCategory } from "@/interfaces";
 import { PageTopProps } from './PageTop.props';
@@ -13,6 +13,10 @@ export const PageTop = ({ products, page, firstCategory }: PageTopProps): JSX.El
     const setSort = (sort: SortEnum) => {
         dispathSort({ type: sort });
     };
+
+    useEffect(() => {
+        dispathSort({type: 'reset', initialState: products});
+    }, [products]);
 
     if (!page) return <></>;
 
