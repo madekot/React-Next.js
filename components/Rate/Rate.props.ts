@@ -7,6 +7,6 @@ export interface RateProps extends HTMLProps {
     filled: number;
     isEditable?: boolean;
     rating: number;
-    handleRatingChange: (rating: number) => void;
-    handleFilledChange: (newFilled: number) => void;
+    handleRatingChange?: (rating: number) => void;
+    handleFilledChange?: (newFilled: number) => void;
 }

@@ -1,5 +1,5 @@
 import { useReducer } from "react";
-import { JobOffers, Tag, Typography, Advantages, Sort, SortEnum } from '@/components';
+import { JobOffers, Tag, Typography, Advantages, Sort, SortEnum, Product } from '@/components';
 import { TopLevelCategory } from "@/interfaces";
 import { PageTopProps } from './PageTop.props';
 import { sortReducer } from "./sort.reducer";
@@ -28,7 +28,7 @@ export const PageTop = ({ products, page, firstCategory }: PageTopProps): JSX.El
                     <Sort sort={sort} setSort={setSort} />
                 </div>
                 <div>
-                    {sortedProducts && sortedProducts.map(p => (<div key={p._id}>{p.title}</div>))}
+                    {sortedProducts && sortedProducts.map(p => (<Product key={p._id} product={p} />))}
                 </div>
                 <div className={s.hhTitle}>
                     <Title tag='h2'>Вакансии - {page.category}</Title>
