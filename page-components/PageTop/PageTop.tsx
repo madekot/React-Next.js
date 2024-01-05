@@ -14,11 +14,13 @@ export const PageTop = ({ products, page, firstCategory }: PageTopProps): JSX.El
         dispathSort({ type: sort });
     };
 
+    if (!page) return <></>;
+
     return (
         <>
             <div className={s.wrapper}>
                 <div className={s.title}>
-                    <Title tag='h1'>{page?.title}</Title>
+                    <Title tag='h1'>{page.title}</Title>
                     {products && <Tag
                       color='grey'
                       size='m'
@@ -29,21 +31,21 @@ export const PageTop = ({ products, page, firstCategory }: PageTopProps): JSX.El
                     {sortedProducts && sortedProducts.map(p => (<div key={p._id}>{p.title}</div>))}
                 </div>
                 <div className={s.hhTitle}>
-                    <Title tag='h2'>Вакансии - {page?.category}</Title>
+                    <Title tag='h2'>Вакансии - {page.category}</Title>
                     <Tag
                         color='red'
                         size='m'
                     >hh.ru</Tag>
                 </div>
-                {firstCategory == TopLevelCategory.Courses && page?.hh && <JobOffers {...page.hh} />}
-                {page?.advantages && page.advantages.length > 0 && <>
+                {firstCategory == TopLevelCategory.Courses && page.hh && <JobOffers {...page.hh} />}
+                {page.advantages && page.advantages.length > 0 && <>
                   <Title tag='h2'>Преимущства</Title>
                   <Advantages advantages={page.advantages} />
                 </>
                 }
-                {page?.seoText && <div className={s.seo} dangerouslySetInnerHTML={{ __html: page.seoText }} />}
+                {page.seoText && <div className={s.seo} dangerouslySetInnerHTML={{ __html: page.seoText }} />}
                 <Title tag='h2'>Получаемые навыки</Title>
-                {page?.tags.map(t => <Tag key={t} color='primary'>{t}</Tag>)}
+                {page.tags.map(t => <Tag key={t} color='primary'>{t}</Tag>)}
             </div>
         </>
     );
