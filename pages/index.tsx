@@ -1,4 +1,4 @@
-import { Button, Rate, Tag, Typography } from "@/components";
+import { Button, Input, Rate, Tag, Textarea, Typography } from "@/components";
 import { useState } from "react";
 import { withLayout } from "@/layout";
 import { GetStaticProps } from "next";
@@ -37,6 +37,8 @@ function Home(): JSX.Element {
                     filled={filled}
                     handleFilledChange={setFilled}
                 />
+                <Input placeholder='тест' />
+                <Textarea placeholder={'тест area'}/>
             </div>
         </div>
     );
