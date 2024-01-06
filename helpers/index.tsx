@@ -7,3 +7,4 @@ const declOfNum = (number: number, titles: [string, string, string]): string => 
 
 export { firstLevelMenu } from './firstLevelMenu';
 export { priceRu, declOfNum };
+export { API } from './api';

@@ -3,7 +3,7 @@ import React from 'react';
 import axios from 'axios';
 import { ParsedUrlQuery } from 'node:querystring';
 import { withLayout } from "@/layout";
-import { firstLevelMenu } from "@/helpers";
+import { API, firstLevelMenu } from "@/helpers";
 import { MenuItem } from "@/interfaces";
 
 function Type({ firstCategory }: TypeProps): JSX.Element {
@@ -36,7 +36,7 @@ export const getStaticProps: GetStaticProps<TypeProps> = async ({ params }: GetS
             notFound: true
         };
     }
-    const { data: menu } = await axios.post<MenuItem[]>(process.env.NEXT_PUBLIC_DOMAIN + '/api/top-page/find', {
+    const { data: menu } = await axios.post<MenuItem[]>(API.topPage.find, {
         firstCategory: firstCategoryItem.id
     });
     return {
