@@ -1,9 +1,9 @@
-import React, { KeyboardEvent, useState } from "react";
+import { ForwardedRef, forwardRef, KeyboardEvent, useState } from "react";
 import { RateProps } from './Rate.props';
 import styles from './Rate.module.css';
 import { RatingStar } from "./RatingStar";
 
-export const Rate = (props: RateProps): JSX.Element => {
+export const Rate = forwardRef((props: RateProps, ref: ForwardedRef<HTMLDivElement>): JSX.Element => {
     const {
         isEditable = false,
         rating,
@@ -30,7 +30,7 @@ export const Rate = (props: RateProps): JSX.Element => {
     };
 
     return (
-        <div className={styles.rate} {...rest}>
+        <div className={styles.rate} ref={ref} {...rest}>
             {Array.from({ length: stars }, (_, i: number) => (
                 <RatingStar
                     className={styles.item}
@@ -45,4 +45,4 @@ export const Rate = (props: RateProps): JSX.Element => {
             ))}
         </div>
     );
-};
+});
