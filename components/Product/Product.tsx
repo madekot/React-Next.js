@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { ProductProps } from './Product.props';
 import styles from './Product.module.css';
 import cn from 'classnames';
-import { Button, Card, Rate, Review, Tag } from '@/components';
+import { Button, Card, Rate, Review, ReviewForm, Tag } from '@/components';
 import { declOfNum, priceRu } from 'helpers';
 import { Divider } from '@/components';
 import { useState } from "react";
@@ -80,6 +80,7 @@ export const Product = ({ product }: ProductProps): JSX.Element => {
                         <Divider />
                     </div>
                 )}
+                <ReviewForm productId={product._id} />
             </Card>
         </>
     );
