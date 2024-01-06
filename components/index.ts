@@ -7,6 +7,7 @@ export { Input } from './Input';
 export { JobOffers } from './JobOffers';
 export { Product } from './Product';
 export { Rate } from './Rate';
+export { Review } from './Review';
 export { Search } from './Search';
 export { Sort, SortEnum } from './Sort';
 export { Tag } from './Tag';
