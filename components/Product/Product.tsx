@@ -29,7 +29,7 @@ export const Product = ({ product }: ProductProps): JSX.Element => {
                 <div className={styles.credit}>
                     {priceRu(product.credit)}/<span className={styles.month}>мес</span>
                 </div>
-                <div className={styles.rating}><Rate filled={product.reviewAvg ?? product.initialRating} rating={product.reviewAvg ?? product.initialRating} /></div>
+                <div className={styles.rating}><Rate rating={product.reviewAvg ?? product.initialRating} /></div>
                 <div className={styles.tags}>{product.categories.map(c => <Tag key={c} className={styles.category} color='ghost'>{c}</Tag>)}</div>
                 <div className={styles.priceTitle}>цена</div>
                 <div className={styles.creditTitle}>кредит</div>

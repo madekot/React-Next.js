@@ -19,7 +19,7 @@ export const Review = ({ review, className, ...props }: ReviewProps): JSX.Elemen
                 {createdAt}
             </div>
             <div className={styles.rating}>
-                <Rate filled={rating} rating={rating} />
+                <Rate rating={rating} />
             </div>
             <div className={styles.description}>
                 {description}

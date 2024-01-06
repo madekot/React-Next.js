@@ -1,4 +1,4 @@
-import React, { KeyboardEvent } from "react";
+import React, { KeyboardEvent, useState } from "react";
 import { RateProps } from './Rate.props';
 import styles from './Rate.module.css';
 import { RatingStar } from "./RatingStar";
@@ -8,18 +8,18 @@ export const Rate = (props: RateProps): JSX.Element => {
         isEditable = false,
         rating,
         stars = 5,
-        filled,
         handleRatingChange,
-        handleFilledChange,
         ...rest
     } = props;
+
+    const [filled, setFilled] = useState<number>(rating);
 
     const onRatingChange = (newRating: number) => {
         isEditable && handleRatingChange?.(newRating);
     };
 
     const onFilledChange = (newFilled: number) => {
-        isEditable && handleFilledChange?.(newFilled);
+        isEditable && setFilled(newFilled);
     };
 
     const onKeyDown = (i: number) => (e: KeyboardEvent<HTMLSpanElement>) => {

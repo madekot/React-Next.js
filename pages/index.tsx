@@ -9,7 +9,6 @@ const { Paragraph, Title } = Typography;
 
 function Home(): JSX.Element {
     const [rating, setRating] = useState<number>(4);
-    const [filled, setFilled] = useState<number>(rating);
 
     return (
         <div>
@@ -34,8 +33,6 @@ function Home(): JSX.Element {
                     isEditable
                     rating={rating}
                     handleRatingChange={setRating}
-                    filled={filled}
-                    handleFilledChange={setFilled}
                 />
                 <Input placeholder='тест' />
                 <Textarea placeholder={'тест area'}/>

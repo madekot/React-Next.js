@@ -4,9 +4,7 @@ type HTMLProps = Pick<DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivE
 
 export interface RateProps extends HTMLProps {
     stars?: number;
-    filled: number;
     isEditable?: boolean;
     rating: number;
     handleRatingChange?: (rating: number) => void;
-    handleFilledChange?: (newFilled: number) => void;
 }
