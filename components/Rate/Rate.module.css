@@ -1,7 +1,25 @@
-.rate {
+.starsList {
 	display: flex;
 }
 
 .item:not(:last-child) {
 	padding-right: 5px;
+}
+
+.ratingWrapper {
+	position: relative;
+
+	display: flex;
+}
+
+.errorMessage {
+	position: absolute;
+	bottom: -20px;
+	left: 0;
+
+	color: var(--red);
+}
+
+.error svg {
+	stroke: var(--red);
 }

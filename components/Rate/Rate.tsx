@@ -2,12 +2,14 @@ import { ForwardedRef, forwardRef, KeyboardEvent, useState } from "react";
 import { RateProps } from './Rate.props';
 import styles from './Rate.module.css';
 import { RatingStar } from "./RatingStar";
+import cn from "classnames";
 
 export const Rate = forwardRef((props: RateProps, ref: ForwardedRef<HTMLDivElement>): JSX.Element => {
     const {
         isEditable = false,
         rating,
         stars = 5,
+        error,
         handleRatingChange,
         ...rest
     } = props;
@@ -30,19 +32,28 @@ export const Rate = forwardRef((props: RateProps, ref: ForwardedRef<HTMLDivEleme
     };
 
     return (
-        <div className={styles.rate} ref={ref} {...rest}>
-            {Array.from({ length: stars }, (_, i: number) => (
-                <RatingStar
-                    className={styles.item}
-                    key={i}
-                    filled={i < filled}
-                    editable={isEditable}
-                    onMouseEnter={() => onFilledChange(i + 1)}
-                    onMouseLeave={() => onFilledChange(rating)}
-                    onClick={() => onRatingChange(i + 1)}
-                    onKeyDown={onKeyDown(i)}
-                />
-            ))}
+        <div
+            className={cn(styles.ratingWrapper, {
+                [styles.error]: error
+            })}
+            ref={ref}
+            {...rest}
+        >
+            <div className={styles.starsList}>
+                {Array.from({ length: stars }, (_, i: number) => (
+                    <RatingStar
+                        className={styles.item}
+                        key={i}
+                        filled={i < filled}
+                        editable={isEditable}
+                        onMouseEnter={() => onFilledChange(i + 1)}
+                        onMouseLeave={() => onFilledChange(rating)}
+                        onClick={() => onRatingChange(i + 1)}
+                        onKeyDown={onKeyDown(i)}
+                    />
+                ))}
+            </div>
+            {error && <span className={styles.errorMessage}>{error.message}</span>}
         </div>
     );
 });
