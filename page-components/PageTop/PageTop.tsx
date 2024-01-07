@@ -32,7 +32,7 @@ export const PageTop = ({ products, page, firstCategory }: PageTopProps): JSX.El
                     <Sort sort={sort} setSort={setSort} />
                 </div>
                 <div>
-                    {sortedProducts && sortedProducts.map(p => (<Product key={p._id} product={p} />))}
+                    {sortedProducts && sortedProducts.map(p => (<Product layout key={p._id} product={p} />))}
                 </div>
                 <div className={s.hhTitle}>
                     <Title tag='h2'>Вакансии - {page.category}</Title>
