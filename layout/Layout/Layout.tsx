@@ -4,6 +4,7 @@ import { Header } from '../Header';
 import React from 'react';
 import { Footer } from '../Footer';
 import { Sidebar } from "../Sidebar";
+import { ScrollTop } from "@/components";
 
 export const Layout = ({ children }: LayoutProps): JSX.Element => {
     return (
@@ -14,6 +15,7 @@ export const Layout = ({ children }: LayoutProps): JSX.Element => {
                 {children}
             </div>
             <Footer className={s.footer} />
+            <ScrollTop />
         </div>
     );
 };
