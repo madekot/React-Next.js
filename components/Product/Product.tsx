@@ -3,10 +3,10 @@ import { ProductProps } from './Product.props';
 import styles from './Product.module.css';
 import cn from 'classnames';
 import { Button, Card, Rate, Review, ReviewForm, Tag } from '@/components';
-import { declOfNum, priceRu } from 'helpers';
 import { Divider } from '@/components';
 import { ForwardedRef, forwardRef, useRef, useState } from "react";
 import { motion } from "framer-motion";
+import { declOfNum, priceRu } from "./utils";
 
 export const Product = motion(forwardRef((props: ProductProps, ref: ForwardedRef<HTMLDivElement>): JSX.Element => {
     const {

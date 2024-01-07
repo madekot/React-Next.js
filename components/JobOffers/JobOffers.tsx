@@ -1,9 +1,8 @@
 import RateIcon from './rate.svg';
 import React from 'react';
 import s from './JobOffers.module.css';
-import { Card } from "@/components";
+import { Card, priceRu } from "@/components";
 import { JobOffersProps } from './JobOffers.props';
-import { priceRu } from "@/helpers";
 
 export const JobOffers = ({ count, juniorSalary, middleSalary, seniorSalary }: JobOffersProps): JSX.Element => {
     return (

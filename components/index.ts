@@ -5,7 +5,7 @@ export { Divider } from './Divider';
 export { Icon } from './Icon';
 export { Input } from './Input';
 export { JobOffers } from './JobOffers';
-export { Product } from './Product';
+export { Product, declOfNum, priceRu } from './Product';
 export { Rate } from './Rate';
 export { Review } from './Review';
 export { ReviewForm } from './ReviewForm';
