@@ -7,6 +7,7 @@ import { Divider } from '@/components';
 import { ForwardedRef, forwardRef, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { declOfNum, priceRu } from "./utils";
+import { variants } from "./animation";
 
 export const Product = motion(forwardRef((props: ProductProps, ref: ForwardedRef<HTMLDivElement>): JSX.Element => {
     const {
@@ -98,22 +99,28 @@ export const Product = motion(forwardRef((props: ProductProps, ref: ForwardedRef
                     </Button>
                 </div>
             </Card>
-            <Card
-                color='blue'
-                className={cn(styles.reviews, {
-                    [styles.opened]: isReviewOpened,
-                    [styles.closed]: !isReviewOpened,
-                })}
-                ref={reviewRef}
+            <motion.div
+                style={{
+                    pointerEvents: isReviewOpened ? 'auto': 'none'
+                }}
+                animate={isReviewOpened ? 'visible' : 'hidden'}
+                variants={variants}
+                initial='hidden'
             >
-                {product.reviews.map(r =>
-                    <div key={r._id}>
-                        <Review  review={r} />
-                        <Divider />
-                    </div>
-                )}
-                <ReviewForm productId={product._id} />
-            </Card>
+                <Card
+                    color='blue'
+                    className={cn(styles.reviews)}
+                    ref={reviewRef}
+                >
+                    {product.reviews.map(r =>
+                         <div key={r._id}>
+                             <Review  review={r} />
+                             <Divider />
+                         </div>
+                    )}
+                    <ReviewForm productId={product._id} />
+                </Card>
+            </motion.div>
         </div>
     );
 }));
