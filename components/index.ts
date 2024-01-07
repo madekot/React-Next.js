@@ -1,5 +1,6 @@
 export { Advantages } from './Advantages';
 export { Button } from './Button';
+export { ButtonIcon } from './ButtonIcon';
 export { Card } from './Card';
 export { Divider } from './Divider';
 export { Icon } from './Icon';

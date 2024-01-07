@@ -1,8 +1,8 @@
 import { motion, useAnimation } from 'framer-motion';
 import { useEffect } from 'react';
 import styles from './ScrollTop.module.css';
-import UpIcon from './up.svg';
 import { useScrollY } from "./hooks/useScrollY";
+import { ButtonIcon } from "@/components";
 
 export const ScrollTop = (): JSX.Element => {
     const controls = useAnimation();
@@ -20,13 +20,12 @@ export const ScrollTop = (): JSX.Element => {
     };
 
     return (
-        <motion.button
+        <motion.div
             className={styles.scrollTop}
-            onClick={scrollToTop}
             animate={controls}
             initial={{ opacity: 0 }}
         >
-            <UpIcon />
-        </motion.button>
+            <ButtonIcon appearance='primary' icon='up' onClick={scrollToTop} />
+        </motion.div>
     );
 };
