@@ -1,4 +1,4 @@
-import { Icon } from "@/components/Icon";
+import { Icon } from "@/components";
 import { FirstLevelMenuItem, TopLevelCategory } from "@/interfaces";
 
 export const firstLevelMenu: FirstLevelMenuItem[] = [
